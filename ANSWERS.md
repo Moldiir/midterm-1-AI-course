@@ -62,12 +62,10 @@ I would test the chosen configuration on a larger set of real user questions in 
 ## Part 2: A document pipeline you can defend
 
 ### 2a. Numbers
-
 | pipeline | overall accuracy | weakest cell (language, condition) | accuracy there |  lower |  upper | annual cost |
 | -------- | ---------------: | ---------------------------------- | -------------: | -----: | -----: | ----------: |
-| H        |           0.8611 | KK, Clean                          |         0.7333 | 0.5555 | 0.8582 |   $6,190.40 |
-| L        |           0.8556 | KK, Degraded                       |         0.8000 | 0.6269 | 0.9049 |  $10,800.00 |
-
+| H        |           0.8611 | KK, Clean                          |         0.7333 | 0.5555 | 0.8582 |     6190.40 |
+| L        |           0.8556 | KK, Degraded                       |         0.8000 | 0.6269 | 0.9049 |    10800.00 |
 
 
 Personal-data pages per year sent abroad under H:481800
@@ -78,7 +76,7 @@ Personal-data pages per year sent abroad under H:481800
 
 I recommend Pipeline L for processing documents because it provides better privacy and more consistent results across different conditions.
 
-Pipeline H has a slightly higher overall accuracy of 86.11%, compared to 85.56% for Pipeline L. However, Pipeline H performs poorly in its weakest case, with only 73.33% accuracy for clean Kazakh documents. Pipeline L has a higher minimum accuracy of 83.33%, making its performance more consistent.
+Pipeline H has a slightly higher overall accuracy of 86.11%, compared to 85.56% for Pipeline L. However, Pipeline H performs poorly in its weakest case, with only 73.33% accuracy for clean Kazakh documents. Pipeline L has a higher minimum accuracy of 80.00%, making its performance more consistent.
 
 Pipeline H costs $6,190.40 per year, while Pipeline L costs $10,800 per year. Although Pipeline L is $4,609.60 more expensive annually, it keeps document processing within Kazakhstan.
 
@@ -93,25 +91,25 @@ Overall, I recommend Pipeline L because its accuracy is nearly the same as Pipel
 
 ### Q1
 
-Number:
-Why (at most 40 words):
+Number: 2.14
+Why (at most 40 words):The bill ratio differs from the token ratio because output tokens cost six times more than input tokens. The Kazakh request has a different input/output token mix, which changes its total cost.
 
 ### Q2
 
-Number:
-Why (at most 40 words):
+Number: 2.7%
+Why (at most 40 words):English exceeds the 512-token limit, while Russian and Kazakh fit. The excess English text is truncated and never reaches the embedding model.
 
 ### Q3
 
-Number:
-Why (at most 40 words):
+Number: 78.8%
+Why (at most 40 words):Temperature 0.7 makes the distribution more concentrated on the highest-scoring token. The ranking stays the same, and all five tokens can still be sampled because each has a nonzero probability.
 
 ### Q4
 
-Number:
-Why (at most 40 words):
+Number: 32
+Why (at most 40 words):The leaderboard prefers Model Y because it penalizes wrong answers heavily. This can encourage a model to say “I don’t know” instead of risking an incorrect answer.
 
 ### Q5
 
-Number:
-Why (at most 40 words):
+Number:11.30
+Why (at most 40 words):The model is over-trained by this criterion because it has 11.30 times more tokens per parameter than Chinchilla. Chinchilla showed that models like GPT-3 could use more training data and fewer parameters for better compute efficiency.
